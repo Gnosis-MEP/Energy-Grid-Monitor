@@ -11,7 +11,7 @@
 
 from energenie import Registry, Devices, Messages, OpenThings, radio
 import time
-import Logger
+import Logger_request as Logger
 
 def warning(msg):
     print("warning:%s" % str(msg))
@@ -39,7 +39,7 @@ def monitor_loop():
             except OpenThings.OpenThingsException as e:
                 warning("Can't decode payload:" + str(e))
                 continue
-                      
+
             OpenThings.showMessage(decoded, timestamp=now)
             # Any device that reports will be added to the non-persistent directory
             Registry.update(decoded)
@@ -60,7 +60,7 @@ def monitor_loop():
 
 
 if __name__ == "__main__":
-    
+
     trace("starting monitor tester")
     radio.init()
     OpenThings.init(Devices.CRYPT_PID)
