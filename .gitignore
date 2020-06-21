@@ -1,3 +1,5 @@
 webserver/*.db
 webserver/*.log
 src/*.log
+*/__pycache__/*
+*/*/__pycache__/*
