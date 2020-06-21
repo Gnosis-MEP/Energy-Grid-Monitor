@@ -1,2 +1,3 @@
 webserver/*.db
+webserver/*.log
 src/*.log
