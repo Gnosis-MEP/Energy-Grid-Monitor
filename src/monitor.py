@@ -29,6 +29,7 @@ def monitor_loop():
     radio.receiver()
 
     while True:
+        time.sleep(0.1)
         # See if there is a payload, and if there is, process it
         if radio.is_receive_waiting():
             trace("receiving payload")
