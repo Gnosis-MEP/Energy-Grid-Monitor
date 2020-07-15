@@ -1,6 +1,7 @@
 # Logger.py  14/05/2016  D.J.Whale
 #
 # A simple logger  request- logs to a server.
+import threading
 import json
 import time
 from urllib import request
@@ -24,6 +25,7 @@ def make_request_post(url, data):
     req = request.Request(url,
                           data=params, headers={'content-type': 'application/json'})
     response = request.urlopen(req)
+    print(f'Log request status: {resp.status}')
     return response
 
 
@@ -90,5 +92,5 @@ def logMessage(msg):
         'frequency': freq,
         'real_energy': real,
     }
-    resp = make_request_post(SET_ENERGY_URL, data)
-    print(f'Log request status: {resp.status}')
+    thread = threading.Thread(target=make_request_post, args=(SET_ENERGY_URL, data))
+    thread.start()
