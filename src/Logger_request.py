@@ -25,7 +25,7 @@ def make_request_post(url, data):
     req = request.Request(url,
                           data=params, headers={'content-type': 'application/json'})
     response = request.urlopen(req)
-    print(f'Log request status: {resp.status}')
+    print(f'Log request status: {response.status}')
     return response
 
 
