@@ -21,44 +21,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
-# def read_energy_file(energeny_file_path, start_time, end_time, device):
-#     found_starting_point = False
-#     data = {}
-#     with open(energeny_file_path, 'r') as csv_file:
-#         reader = csv.reader(csv_file)
-#         next(reader)
-#         for reading in reader:
-#             timestamp = float(reading[0])
-#             device_id = int(reading[3])
-#             if device_id != device:
-#                 continue
-
-#             # Find experiment starting point
-#             if timestamp < start_time:
-#                 # curr_datetime = datetime.datetime.fromtimestamp(timestamp)
-#                 # back_start_datetime = datetime.datetime.fromtimestamp(self.start_time)
-#                 # print(f'Current Energy Reading datetime: {curr_datetime}')
-#                 # print(f'Experiment Starting time:        {back_start_datetime}\n\n')
-#                 continue
-#             else:
-#                 if found_starting_point is False:
-#                     found_starting_point = True
-#                     curr_datetime = datetime.datetime.fromtimestamp(timestamp)
-#                     back_start_datetime = datetime.datetime.fromtimestamp(start_time)
-#                     print(f'Found experiment start point on energy consumption data.')
-#                     print(f'Current Energy Reading datetime: {curr_datetime}')
-#                     print(f'Experiment Starting time:        {back_start_datetime}')
-
-#             # Find experiment ending point
-#             if timestamp > end_time:
-#                 curr_datetime = datetime.datetime.fromtimestamp(timestamp)
-#                 back_end_datetime = datetime.datetime.fromtimestamp(end_time)
-#                 print(f'Found experiment end point on energy consumption data.')
-#                 print(f'Current Energy Reading datetime: {curr_datetime}')
-#                 print(f'Experiment Ending time:          {back_end_datetime}')
-#                 break
-
-
 @app.route('/api/get-energy')
 def get_energy_consumption():
     start_time = request.args.get('starttimestamp', None)
