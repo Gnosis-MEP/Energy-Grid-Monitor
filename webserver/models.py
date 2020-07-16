@@ -17,7 +17,7 @@ class EnergyModel(db.Model):
 
     def __repr__(self):
         s = (
-            f'<id: {self.id}, result_id:{self.device_id},'
+            f'<id: {self.id}, device_id:{self.device_id},'
             f' timestamp:{self.timestamp},'
             f' freq:{self.frequency}, voltage:{self.voltage}, real_energy: {self.real_energy}>'
         )

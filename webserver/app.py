@@ -64,7 +64,6 @@ def get_energy_consumption():
     start_time = request.args.get('starttimestamp', None)
     end_time = request.args.get('endtimestamp', None)
     device = request.args.get('device', None)
-
     query = db.session.query(EnergyModel)
     if start_time:
         start_time = datetime.datetime.fromtimestamp(float(start_time))
