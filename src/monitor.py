@@ -38,8 +38,9 @@ def monitor_loop():
             try:
                 decoded = OpenThings.decode(payload)
                 now = time.time()
-            except OpenThings.OpenThingsException as e:
-                warning("Can't decode payload:" + str(e))
+            except (OpenThings.OpenThingsException, ValueError) as e:
+                warning("Can't decode payload:" + str(payload))
+                warning("Exception:" + str(e))
                 continue
 
             try:
@@ -75,6 +76,7 @@ if __name__ == "__main__":
         monitor_loop()
 
     finally:
+        print
         radio.finished()
 
 # END
