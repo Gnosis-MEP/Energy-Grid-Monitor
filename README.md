@@ -1,5 +1,8 @@
-# pyenergenie
-A python interface to the Energenie line of products
+# Energy Grid Monitor
+This is a fork from: https://github.com/whaleygeek/pyenergenie
+but with a simple webserver API
+
+A python interface to the Energenie line of products.
 
 https://energenie4u.co.uk/
 
@@ -19,9 +22,9 @@ this code, which now supports all models of Raspberry Pi, and all devices
 from Energenie (including the old green button devices and the new
 MiHome monitor devices).
 
-The Energenie product line uses the HopeRF radio transciever, and the OpenThings 
-protocol from Sentec. Energenie have built a RaspberryPi add-on board that 
-interfaces to the HopeRF RFM69, and allows both control and monitoring of their 
+The Energenie product line uses the HopeRF radio transciever, and the OpenThings
+protocol from Sentec. Energenie have built a RaspberryPi add-on board that
+interfaces to the HopeRF RFM69, and allows both control and monitoring of their
 products from a Raspberry Pi.
 
 Energenie have some (old) sample code written in C to control and monitor
